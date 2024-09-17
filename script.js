@@ -7,23 +7,28 @@ async function getData() {
 
   try {
     let response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`response status: ${response.status}`);
+    }
     let data = await response.json();
     console.log(data);
-
-    if (!response.ok) {
-      throw new error(`response status: ${response.status}`);
-    }
 
     for (let key in data) {
       adviceId.innerHTML += `<span>ADVICE #${data[key].id}</span>`;
       advice.innerHTML += `<p>"${data[key].advice}"</p>`;
-      diceBtn.addEventListener("click", () => {
-        window.location.reload();
-      });
     }
+    return data.slip;
   } catch (error) {
     console.log(error.message);
   }
 }
+
+diceBtn.addEventListener("click", async () => {
+  const data = await getData();
+  adviceId.innerHTML = "";
+  advice.innerHTML = "";
+  adviceId.innerHTML += `<span>ADVICE #${data.id}</span>`;
+  advice.innerHTML += `<p>"${data.advice}"</p>`;
+});
 
 getData();

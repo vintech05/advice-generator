@@ -43,11 +43,10 @@ body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: 2em;
 
     .advice-id {
       text-transform: uppercase;
-      padding-top: 2em;
+      padding-top: 3em;
       letter-spacing: 3px;
       font-size: 0.7rem;
 
@@ -62,16 +61,16 @@ body {
       right: 0;
       margin-left: auto;
       margin-right: auto;
-      padding-inline: 1rem;
+      margin-inline: 0.5em;
       margin-top: 4em;
       color: var(--light-cyan);
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       text-wrap: balance;
     }
   }
 
   .accessory {
-    padding-top: 12.5em;
+    padding-top: 12em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -119,17 +118,18 @@ body {
 
 @media screen and (min-width: 1024px) {
   .wrapper {
-    height: 19rem;
-    width: 30rem;
+    height: 22rem;
+    width: 34rem;
 
     .advice-section {
       .advice-content {
-        margin-top: 3.8em;
-        font-size: 1.5em;
+        margin-top: 4em;
+        font-size: 1.8em;
       }
     }
 
     .accessory {
+      padding-top: 14em;
       gap: 1em;
       .divider-mobile img {
         display: none;
